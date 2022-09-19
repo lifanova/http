@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.lifanova'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.httpcomponents.client5:httpclient5:5.1.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.4'
+
+    implementation group: 'org.projectlombok', name: 'lombok', version:'1.16.10'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
